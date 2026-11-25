@@ -3,6 +3,6 @@ import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/land1/",
+  base: process.env.GITHUB_ACTIONS === "true" ? "/land1/" : "/",
   plugins: [react(), tailwindcss()],
 });
